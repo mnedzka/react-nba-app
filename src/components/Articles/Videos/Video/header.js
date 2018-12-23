@@ -1,19 +1,12 @@
-import React from 'react';
-import TeamInfo from '../../Elements/teamInfo';
+import React from "react";
+import TeamNfo from "../../Elements/teamNfo";
 
-const header = (props) => {
+const header = props => {
+  const teamNfo = team => {
+    return team ? <TeamNfo team={team} /> : null;
+  };
 
-    const teamInfo = (team) => {
-        return team ? (
-            <TeamInfo team={team} />
-        ) : null;
-    }
-
-    return (
-        <div>
-            {teamInfo(props.data)}
-        </div>
-    );
+  return <div>{teamNfo(props.teamData)}</div>;
 };
 
 export default header;

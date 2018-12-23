@@ -1,25 +1,21 @@
-import React from 'react';
-import TeamInfo from '../../Elements/teamInfo';
-import PostData from '../../Elements/postData';
+import React from "react";
 
-const header = (props) => {
+import TeamNfo from "../../Elements/teamNfo";
+import PostData from "../../Elements/postData";
 
-    const teamInfo = (team) => {
-        return team ? (
-            <TeamInfo team={team} />
-        ) : null;
-    }
+const header = props => {
+  const teamNfo = team => {
+    return team ? <TeamNfo team={team} /> : null;
+  };
 
-    const postData = ( date, author ) => (
-        <PostData data={{date,author}}/>
-    )
+  const postData = (date, author) => <PostData data={{ date, author }} />;
 
-    return (
-        <div>
-            {teamInfo(props.teamData)}
-            {postData(props.date, props.author)}
-        </div>
-    );
+  return (
+    <div>
+      {teamNfo(props.teamData)}
+      {postData(props.date, props.author)}
+    </div>
+  );
 };
 
 export default header;
